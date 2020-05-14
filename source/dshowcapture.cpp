@@ -310,4 +310,19 @@ bool Device::EnumAudioDevices(vector<AudioDevice> &devices)
 			   EnumDeviceCallback(EnumAudioDevice), &devices);
 }
 
+static std::vector<VideoDevice> videoDevices;
+static std::vector<AudioDevice> audioDevices;
+
+std::vector<VideoDevice>& Device::EnumVideoDevicesUnsafe()
+{
+	EnumVideoDevices(videoDevices);
+	return videoDevices;
+}
+
+std::vector<AudioDevice>& Device::EnumAudioDevicesUnsafe()
+{
+	EnumAudioDevices(audioDevices);
+	return audioDevices;
+}
+
 }; /* namespace DShow */

@@ -242,6 +242,9 @@ public:
 
 	static bool EnumVideoDevices(std::vector<VideoDevice> &devices);
 	static bool EnumAudioDevices(std::vector<AudioDevice> &devices);
+
+	static std::vector<VideoDevice>& EnumVideoDevicesUnsafe();
+	static std::vector<AudioDevice>& EnumAudioDevicesUnsafe();
 };
 
 struct VideoEncoderConfig : DeviceId {
